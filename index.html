@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>釜山賞楓與美食之旅 2026</title>
+  <title>釜山賞楓與美食之旅 2026 🍁</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
-    /* CSS 變數定義 (日夜間模式與手繪配色) */
     :root {
       --bg-color: #FFFDF9;
       --text-color: #4A3E3D;
@@ -34,11 +33,7 @@
       --shadow-color: rgba(0, 0, 0, 0.4);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg-color);
@@ -49,7 +44,6 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* 手繪卡片樣式 */
     .doodle-card {
       background-color: var(--card-bg);
       border: 2px solid var(--border-color);
@@ -57,301 +51,57 @@
       padding: 16px;
       margin-bottom: 16px;
       box-shadow: 4px 5px 0px var(--shadow-color);
-      transition: transform 0.2s;
     }
 
-    /* 頂端導覽列 */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: sticky; top: 0; z-index: 1000;
       background-color: var(--bg-color);
       border-bottom: 2px solid var(--border-color);
       padding: 10px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
     .logo {
       font-family: var(--font-doodle);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent-color);
-      white-space: nowrap;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--accent-color); white-space: nowrap;
     }
 
     nav {
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      padding: 4px 0;
+      display: flex; gap: 6px; overflow-x: auto; padding: 4px 0;
       -webkit-overflow-scrolling: touch;
     }
-
-    nav::-webkit-scrollbar {
-      display: none;
-    }
+    nav::-webkit-scrollbar { display: none; }
 
     .nav-btn {
-      background: none;
-      border: 1.5px solid var(--border-color);
+      background: none; border: 1.5px solid var(--border-color);
       border-radius: 15px 5px 12px 5px/5px 12px 5px 15px;
-      padding: 6px 10px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-color);
-      cursor: pointer;
-      white-space: nowrap;
+      padding: 6px 10px; font-size: 0.85rem; font-weight: 700;
+      color: var(--text-color); cursor: pointer; white-space: nowrap;
     }
-
-    .nav-btn.active {
-      background-color: var(--accent-color);
-      color: #FFF;
-      border-color: var(--border-color);
-    }
+    .nav-btn.active { background-color: var(--accent-color); color: #FFF; }
 
     .theme-toggle {
-      background: none;
-      border: 2px solid var(--border-color);
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      background: none; border: 2px solid var(--border-color);
+      border-radius: 50%; width: 36px; height: 36px;
+      cursor: pointer; font-size: 1.1rem; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
     }
 
-    /* 主容器 */
-    main {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 16px;
-    }
+    main { max-width: 600px; margin: 0 auto; padding: 16px; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
 
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* 飄浮動畫 */
-    @keyframes floatClouds {
-      0% { transform: translateX(-10px); }
-      50% { transform: translateX(10px); }
-      100% { transform: translateX(-10px); }
-    }
-
-    .animated-cloud {
-      animation: floatClouds 6s ease-in-out infinite;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .animated-cloud {
-        animation: none !important;
-      }
-    }
-
-    /* 日期選擇按鈕 */
-    .day-selector {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      margin-bottom: 20px;
-      padding-bottom: 6px;
-    }
-
+    .day-selector { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 6px; }
     .day-btn {
-      background-color: var(--card-bg);
-      border: 2px solid var(--border-color);
-      border-radius: 10px;
-      padding: 8px 12px;
-      font-size: 0.85rem;
-      font-weight: bold;
-      color: var(--text-color);
-      cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
+      background-color: var(--card-bg); border: 2px solid var(--border-color);
+      border-radius: 10px; padding: 8px 12px; font-size: 0.85rem;
+      font-weight: bold; color: var(--text-color); cursor: pointer; white-space: nowrap; flex-shrink: 0;
     }
+    .day-btn.active { background-color: var(--accent-secondary); color: white; }
 
-    .day-btn.active {
-      background-color: var(--accent-secondary);
-      color: white;
-    }
-
-    /* 行程時間軸 */
     .timeline-item {
-      position: relative;
-      padding-left: 18px;
-      border-left: 3px dashed var(--accent-color);
-      margin-bottom: 20px;
+      position: relative; padding-left: 18px;
+      border-left: 3px dashed var(--accent-color); margin-bottom: 20px;
     }
-
     .timeline-time {
-      font-family: var(--font-doodle);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent-color);
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-
-    .transport-tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      color: white;
-      margin-bottom: 6px;
-    }
-
-    .bg-walk { background-color: #2A9D8F; }
-    .bg-bus { background-color: #E76F51; }
-    .bg-subway { background-color: #457B9D; }
-    .bg-taxi { background-color: #E9C46A; color: #333; }
-
-    .tag-must-go {
-      background-color: #D62828;
-      color: white;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: bold;
-      margin-left: 6px;
-    }
-
-    .action-btn {
-      background-color: var(--card-bg);
-      border: 1.5px solid var(--border-color);
-      border-radius: 6px;
-      padding: 4px 10px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      color: var(--text-color);
-      cursor: pointer;
-      margin-top: 8px;
-      margin-right: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      text-decoration: none;
-    }
-
-    /* Modal 彈出視窗 */
-    .modal-backdrop {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .modal-backdrop.active {
-      display: flex;
-    }
-
-    .modal-box {
-      background-color: var(--card-bg);
-      border: 3px solid var(--border-color);
-      border-radius: 20px;
-      max-width: 500px;
-      width: 100%;
-      max-height: 80vh;
-      overflow-y: auto;
-      padding: 20px;
-      position: relative;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: none;
-      border: none;
-      color: var(--text-color);
-      cursor: pointer;
-    }
-
-    /* 輸入控制組 */
-    .input-control {
-      width: 100%;
-      padding: 8px 12px;
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-size: 1rem;
-    }
-
-    .calc-btn {
-      background: var(--bg-color);
-      border: 1.5px solid var(--border-color);
-      border-radius: 6px;
-      padding: 4px 8px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- 頁首導覽列 -->
-  <header>
-    <div class="logo">釜山行 2026 🍁</div>
-    <nav>
-      <button class="nav-btn active" onclick="switchTab('home')">首頁</button>
-      <button class="nav-btn" onclick="switchTab('flights')">航班</button>
-      <button class="nav-btn" onclick="switchTab('itinerary')">每日行程</button>
-      <button class="nav-btn" onclick="switchTab('backup')">備用資料</button>
-      <button class="nav-btn" onclick="switchTab('expense')">記帳</button>
-      <button class="nav-btn" onclick="switchTab('hotels')">住宿</button>
-      <button class="nav-btn" onclick="switchTab('todo')">待辦</button>
-    </nav>
-    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">🌙</button>
-  </header>
-
-  <main>
-    <!-- 1. 首頁 -->
-    <section id="tab-home" class="tab-content active">
-      <div class="doodle-card" style="text-align: center; padding: 24px 16px;">
-        <svg class="animated-cloud" width="100" height="50" viewBox="0 0 100 50" style="margin: 0 auto 10px;">
-          <path d="M20,40 Q10,40 10,30 Q10,20 25,20 Q30,10 45,10 Q60,10 65,20 Q80,20 80,30 Q80,40 70,40 Z" fill="none" stroke="var(--border-color)" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <h1 style="font-family: var(--font-doodle); color: var(--accent-color); font-size: 1.8rem; margin-bottom: 8px;">Busan Travel Handbook</h1>
-        <p style="font-size: 0.95rem; font-weight: 500;">2026/10/31 - 11/06 釜山賞楓與美食之旅 🍁</p>
-      </div>
-
-      <div class="doodle-card">
-        <h3 style="margin-bottom: 10px; color: var(--accent-secondary);">📌 本次行程重點概覽</h3>
-        <ul style="padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
-          <li>海雲台藍線公園膠囊列車 🚃</li>
-          <li>釜山市民公園楓葉步道 🍁</li>
-          <li>韓式烤肉、海鮮帝王蟹與炸雞饗宴 🥩</li>
-          <li>廣安里無人機秀與海景咖啡廳 ☕</li>
-          <li>海雲台 Spa Land 汗蒸幕放鬆 ♨️</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 2. 航班資訊 -->
-    <section id="tab-flights" class="tab-content">
-      <h2 style="font-family: var(--font-doodle); margin-bottom: 16px;">✈️ 航班資訊</h2>
-      
-      <div class="doodle-card">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="font-weight
