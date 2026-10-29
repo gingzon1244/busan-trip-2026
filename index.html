@@ -43,7 +43,6 @@
     </script>
 
     <style>
-        /* Custom Doodle Aesthetic & CSS Variables */
         body {
             font-family: 'Noto Sans TC', sans-serif;
             transition: background-color 0.3s, color 0.3s;
@@ -69,7 +68,6 @@
             box-shadow: 4px 4px 0px 0px #CBD5E0;
         }
 
-        /* SVG Subtle Animations */
         @keyframes floatCloud {
             0%, 100% { transform: translateX(0px); }
             50% { transform: translateX(18px); }
@@ -88,14 +86,12 @@
             animation: rockCapsule 3s ease-in-out infinite;
         }
 
-        /* Reduced Motion Check */
         @media (prefers-reduced-motion: reduce) {
             .animate-cloud, .animate-capsule {
                 animation: none !important;
             }
         }
 
-        /* Hide scrollbars for cleaner look */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -110,10 +106,8 @@
     <!-- Header Navigation -->
     <header class="sticky top-0 z-40 bg-cream/90 dark:bg-handBgDark/90 backdrop-blur-md border-b-2 border-doodleDark dark:border-gray-600 px-3 py-2.5 transition-colors">
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-            <!-- App Logo / Title -->
             <div class="flex items-center justify-between w-full sm:w-auto">
                 <div class="flex items-center space-x-2 cursor-pointer" onclick="switchTab('home')">
-                    <!-- Doodle Waves & Seagull SVG -->
                     <svg class="w-8 h-8 text-pastelBlue animate-capsule" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M10 42 C 20 30, 30 50, 40 38 C 50 26, 60 46, 70 34" stroke="#A3CEF1" fill="none"/>
                         <path d="M4 48 C 18 38, 28 54, 42 42 C 54 32, 60 48, 64 40" stroke="#FFB5A7" fill="none"/>
@@ -121,13 +115,11 @@
                     </svg>
                     <span class="font-hand font-bold text-2xl tracking-wider text-doodleDark dark:text-pastelCoral">Busan Pass 2026 🌊</span>
                 </div>
-                <!-- Dark Mode Switch Button -->
                 <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 border-2 border-doodleDark dark:border-gray-300 rounded-full hover:bg-yellow-100 dark:hover:bg-gray-700 transition" title="切換深淺模式">
                     <i id="themeIcon" class="fas fa-moon text-lg"></i>
                 </button>
             </div>
 
-            <!-- Top Navigation Tabs -->
             <nav class="w-full sm:w-auto overflow-x-auto no-scrollbar py-1">
                 <div class="flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm font-bold whitespace-nowrap">
                     <button onclick="switchTab('home')" id="nav-home" class="nav-btn px-3 py-1.5 rounded-xl border-2 border-doodleDark dark:border-gray-300 bg-pastelCoral text-doodleDark shadow-doodle">
@@ -156,14 +148,11 @@
         </div>
     </header>
 
-    <!-- Main Content Dynamic Container -->
     <main class="flex-grow max-w-5xl w-full mx-auto p-4 sm:p-6">
 
-        <!-- ==================== TAB 1: 首頁 (HOME) ==================== -->
+        <!-- TAB 1: 首頁 -->
         <section id="tab-home" class="tab-content block space-y-6">
-            <!-- Banner / Hero Card -->
             <div class="card-doodle bg-pastelBlue/30 dark:bg-cardDark p-6 relative overflow-hidden">
-                <!-- Floating Decorative Cloud SVG -->
                 <svg class="absolute top-3 right-4 w-20 h-12 text-white/70 dark:text-gray-500 animate-cloud hidden sm:block" viewBox="0 0 100 60" fill="currentColor">
                     <path d="M20,40 Q10,40 10,30 Q10,20 25,20 Q35,10 50,15 Q65,10 75,22 Q85,20 90,30 Q95,40 80,42 Z"/>
                 </svg>
@@ -171,10 +160,9 @@
                 <div class="relative z-10">
                     <span class="px-3 py-1 rounded-full text-xs font-bold bg-pastelCoral border border-doodleDark text-doodleDark">2026 釜山自由行 🇰🇷</span>
                     <h1 class="text-3xl sm:text-4xl font-black font-hand mt-2 mb-1">廣安里海風 & 絕景膠囊列車 7天6夜</h1>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">10/31 (五) - 11/06 (四) ｜ 金海國際機場 PUS ✈️ 高雄小港 KHH</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">10/31 (六) - 11/06 (五) ｜ 金海國際機場 PUS ✈️ 高雄小港 KHH</p>
                 </div>
 
-                <!-- Hand drawn tags summary -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
                     <div class="bg-white dark:bg-gray-800 p-3 rounded-xl border border-doodleDark text-center">
                         <span class="block text-xs text-gray-500">首航抵達</span>
@@ -195,14 +183,13 @@
                 </div>
             </div>
 
-            <!-- Quick Action Shortcuts -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div class="card-doodle bg-sageGreen/20 dark:bg-cardDark p-4 cursor-pointer hover:bg-sageGreen/40 transition" onclick="switchTab('itinerary')">
                     <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 bg-sageGreen text-doodleDark rounded-full flex items-center justify-center text-xl font-bold border border-doodleDark">📅</div>
                         <div>
                             <h3 class="font-bold text-lg">每日行程</h3>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">查看完整時間軸與地圖導航</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">完整時間軸與 NAVER 地圖導航</p>
                         </div>
                     </div>
                 </div>
@@ -211,8 +198,8 @@
                     <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 bg-pastelCoral text-doodleDark rounded-full flex items-center justify-center text-xl font-bold border border-doodleDark">🦀</div>
                         <div>
-                            <h3 class="font-bold text-lg">備用美食與景點</h3>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">帝王蟹、烤肉、咖啡廳大集合</p>
+                            <h3 class="font-bold text-lg">備用美食景點</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">帝王蟹、烤肉與熱門咖啡廳</p>
                         </div>
                     </div>
                 </div>
@@ -221,40 +208,25 @@
                     <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 bg-pastelBlue text-doodleDark rounded-full flex items-center justify-center text-xl font-bold border border-doodleDark">💳</div>
                         <div>
-                            <h3 class="font-bold text-lg">即時記帳 & 匯率</h3>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">韓元/台幣快速換算</p>
+                            <h3 class="font-bold text-lg">即時匯率記帳</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">自動串接即時 KRW 匯率換算</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Hand-drawn Illustration Banner -->
-            <div class="card-doodle bg-white dark:bg-cardDark p-5 text-center flex flex-col items-center justify-center space-y-3">
-                <svg class="w-48 h-24" viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <!-- Train & Rails Doodle -->
-                    <line x1="10" y1="80" x2="190" y2="80" stroke="#2D3748" stroke-dasharray="4 4"/>
-                    <rect x="50" y="30" width="100" height="45" rx="10" fill="#FFB5A7" stroke="#2D3748"/>
-                    <rect x="60" y="40" width="25" height="20" rx="3" fill="#A3CEF1" stroke="#2D3748"/>
-                    <rect x="95" y="40" width="25" height="20" rx="3" fill="#A3CEF1" stroke="#2D3748"/>
-                    <circle cx="70" cy="80" r="6" fill="#2D3748"/>
-                    <circle cx="130" cy="80" r="6" fill="#2D3748"/>
-                </svg>
-                <p class="text-sm font-hand font-bold text-gray-600 dark:text-gray-300">「預祝 Busan 之旅順利圓滿，好吃的烤肉與無敵海景等著我們！」</p>
-            </div>
         </section>
 
-        <!-- ==================== TAB 2: 航班資訊 (FLIGHT) ==================== -->
+        <!-- TAB 2: 航班資訊 -->
         <section id="tab-flight" class="tab-content hidden space-y-6">
             <h2 class="text-2xl font-bold font-hand flex items-center gap-2">
                 <i class="fas fa-plane-departure text-pastelCoral"></i> 航班搭乘資訊
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- 去程 Flight Outbound -->
                 <div class="card-doodle bg-white dark:bg-cardDark p-5 space-y-4 relative">
                     <div class="flex justify-between items-center border-b-2 border-dashed border-gray-300 pb-3">
                         <span class="px-3 py-1 rounded-full text-xs font-bold bg-pastelBlue text-doodleDark">去程 OUTBOUND</span>
-                        <span class="font-bold text-sm text-gray-500">10 / 31 (五)</span>
+                        <span class="font-bold text-sm text-gray-500">10 / 31 (六)</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <div>
@@ -278,18 +250,17 @@
                         </div>
                     </div>
                     <div class="space-y-1 text-xs text-gray-600 dark:text-gray-300 bg-amber-50 dark:bg-amber-950/40 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
-                        <p class="font-bold text-amber-800 dark:text-amber-300">📌 重要機場備註：</p>
-                        <p>1. 下飛機入境後，至 <strong>國際線 1樓 Gate 3</strong> 領取 Visit Busan Pass 實體卡/手環。</p>
-                        <p>2. 領完 pass 後搭乘機場巴士直達廣安里飯店。</p>
+                        <p class="font-bold text-amber-800 dark:text-amber-300">📌 重要備註：</p>
+                        <p>1. 抵達後至 <strong>國際線 1樓 Gate 3</strong> 領取 Visit Busan Pass 實體卡/手環。</p>
+                        <p>2. 搭乘機場巴士直達廣安里。</p>
                         <p>3. 83 haechi 烤肉店下飛機即可同步線上候位。</p>
                     </div>
                 </div>
 
-                <!-- 回程 Flight Inbound -->
                 <div class="card-doodle bg-white dark:bg-cardDark p-5 space-y-4 relative">
                     <div class="flex justify-between items-center border-b-2 border-dashed border-gray-300 pb-3">
                         <span class="px-3 py-1 rounded-full text-xs font-bold bg-pastelCoral text-doodleDark">回程 INBOUND</span>
-                        <span class="font-bold text-sm text-gray-500">11 / 06 (四)</span>
+                        <span class="font-bold text-sm text-gray-500">11 / 06 (五)</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <div>
@@ -313,8 +284,8 @@
                         </div>
                     </div>
                     <div class="space-y-1 text-xs text-gray-600 dark:text-gray-300 bg-sky-50 dark:bg-sky-950/40 p-3 rounded-lg border border-sky-200 dark:border-sky-800">
-                        <p class="font-bold text-sky-800 dark:text-sky-300">⏰ 回程時間叮嚀：</p>
-                        <p>1. 09:30 辦理 退房 (Urban Groove Hotel)。</p>
+                        <p class="font-bold text-sky-800 dark:text-sky-300">⏰ 時間叮嚀：</p>
+                        <p>1. 09:30 退房 (Urban Groove Hotel)。</p>
                         <p>2. 建議 <strong>10:00 前</strong> 抵達金海機場辦理登機與退稅。</p>
                         <p>3. 西面搭乘 Uber / 計程車至機場車程約 30 分鐘。</p>
                     </div>
@@ -322,9 +293,8 @@
             </div>
         </section>
 
-        <!-- ==================== TAB 3: 每日行程 (ITINERARY) ==================== -->
+        <!-- TAB 3: 每日行程 -->
         <section id="tab-itinerary" class="tab-content hidden space-y-6">
-            <!-- Day selector buttons -->
             <div class="flex overflow-x-auto space-x-2 pb-2 no-scrollbar">
                 <button onclick="showDay(1)" id="day-btn-1" class="day-tab px-4 py-2 rounded-xl border-2 border-doodleDark font-bold bg-pastelCoral text-doodleDark shadow-doodle whitespace-nowrap">DAY 1｜10/31</button>
                 <button onclick="showDay(2)" id="day-btn-2" class="day-tab px-4 py-2 rounded-xl border-2 border-doodleDark font-bold bg-white dark:bg-cardDark shadow-doodle whitespace-nowrap">DAY 2｜11/01</button>
@@ -335,51 +305,46 @@
                 <button onclick="showDay(7)" id="day-btn-7" class="day-tab px-4 py-2 rounded-xl border-2 border-doodleDark font-bold bg-white dark:bg-cardDark shadow-doodle whitespace-nowrap">DAY 7｜11/06</button>
             </div>
 
-            <!-- Dynamic Timeline Container -->
-            <div id="timeline-container" class="space-y-4">
-                <!-- Javascript insertion -->
-            </div>
+            <div id="timeline-container" class="space-y-4"></div>
         </section>
 
-        <!-- ==================== TAB 4: 備用資料庫 (BACKUP) ==================== -->
+        <!-- TAB 4: 備用資料庫 -->
         <section id="tab-backup" class="tab-content hidden space-y-6">
             <div class="flex items-center justify-between">
                 <h2 class="text-2xl font-bold font-hand flex items-center gap-2">
                     <i class="fas fa-database text-sageGreen"></i> 景點與美食資料庫
                 </h2>
-                <!-- Category Switch -->
                 <div class="flex space-x-1 border border-doodleDark rounded-xl p-1 bg-white dark:bg-cardDark text-xs font-bold">
                     <button onclick="switchBackupCategory('attractions')" id="cat-btn-attractions" class="px-3 py-1.5 rounded-lg bg-pastelBlue text-doodleDark">景點</button>
                     <button onclick="switchBackupCategory('restaurants')" id="cat-btn-restaurants" class="px-3 py-1.5 rounded-lg text-gray-500">美食餐廳</button>
                 </div>
             </div>
 
-            <!-- Search input -->
             <div class="relative">
                 <input type="text" id="backupSearchInput" onkeyup="filterBackupItems()" placeholder="搜尋景點、韓文店名、餐點..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-doodleDark bg-white dark:bg-gray-800 text-sm focus:outline-none">
                 <i class="fas fa-search absolute left-3.5 top-3.5 text-gray-400"></i>
             </div>
 
-            <div id="backup-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Backup cards dynamically injected -->
-            </div>
+            <div id="backup-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </section>
 
-        <!-- ==================== TAB 5: 記帳 (EXPENSE) ==================== -->
+        <!-- TAB 5: 記帳 (自動即時匯率) -->
         <section id="tab-expense" class="tab-content hidden space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <h2 class="text-2xl font-bold font-hand flex items-center gap-2">
                     <i class="fas fa-wallet text-warmYellow"></i> 旅程即時記帳簿
                 </h2>
-                <!-- Exchange Rate Bar -->
+                <!-- 即時匯率動態更新區塊 -->
                 <div class="flex items-center space-x-2 text-xs bg-white dark:bg-cardDark p-2 rounded-xl border border-doodleDark">
-                    <span>匯率 1 TWD ≈</span>
-                    <input type="number" id="exchangeRate" value="42.5" step="0.5" onchange="updateExchangeRate()" class="w-16 px-1 text-center font-bold border rounded border-gray-400 dark:bg-gray-700">
-                    <span>KRW</span>
+                    <span>💱 匯率:</span>
+                    <span id="rateStatusText" class="font-bold text-emerald-600 dark:text-emerald-400">更新中...</span>
+                    <button onclick="fetchLiveExchangeRate()" class="px-2 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold rounded border border-doodleDark transition">
+                        🔄 更新
+                    </button>
                 </div>
             </div>
 
-            <!-- Summary Totals Cards -->
+            <!-- Summary Totals -->
             <div class="grid grid-cols-2 gap-4">
                 <div class="card-doodle bg-pastelCoral/30 dark:bg-cardDark p-4">
                     <span class="text-xs text-gray-500 dark:text-gray-400 block">總花費 (韓元 KRW)</span>
@@ -398,10 +363,10 @@
                     <input type="text" id="expenseTitle" placeholder="項目 (例：炸雞、公車)" required class="p-2 text-sm border rounded-lg dark:bg-gray-800 dark:border-gray-600">
                     <input type="number" id="expenseAmount" placeholder="金額 (韓元 KRW)" required class="p-2 text-sm border rounded-lg dark:bg-gray-800 dark:border-gray-600">
                     <select id="expenseCategory" class="p-2 text-sm border rounded-lg dark:bg-gray-800 dark:border-gray-600">
-                        <option value="餐饮">🍔 餐飲美食</option>
+                        <option value="餐飲">🍔 餐飲美食</option>
                         <option value="交通">🚕 交通搭乘</option>
-                        <option value="购物">🛍️ 購物採買</option>
-                        <option value="门票">🎟️ 門票娛樂</option>
+                        <option value="購物">🛍️ 購物採買</option>
+                        <option value="門票">🎟️ 門票娛樂</option>
                         <option value="其他">📦 其他開銷</option>
                     </select>
                 </div>
@@ -410,7 +375,6 @@
                 </button>
             </form>
 
-            <!-- Expense List Table -->
             <div class="card-doodle bg-white dark:bg-cardDark p-4 overflow-x-auto">
                 <table class="w-full text-left text-xs sm:text-sm">
                     <thead>
@@ -422,21 +386,18 @@
                             <th class="pb-2 text-center">操作</th>
                         </tr>
                     </thead>
-                    <tbody id="expenseTableBody">
-                        <!-- Dynamic items -->
-                    </tbody>
+                    <tbody id="expenseTableBody"></tbody>
                 </table>
             </div>
         </section>
 
-        <!-- ==================== TAB 6: 住宿資訊 (HOTEL) ==================== -->
+        <!-- TAB 6: 住宿資訊 -->
         <section id="tab-hotel" class="tab-content hidden space-y-6">
             <h2 class="text-2xl font-bold font-hand flex items-center gap-2">
                 <i class="fas fa-bed text-purple-500"></i> 下榻飯店資訊
             </h2>
 
             <div class="space-y-4">
-                <!-- Hotel 1 -->
                 <div class="card-doodle bg-white dark:bg-cardDark p-5 space-y-2">
                     <div class="flex justify-between items-start">
                         <div>
@@ -449,7 +410,6 @@
                     <p class="text-xs text-gray-600 dark:text-gray-300">📍 廣安里海景第一排，近無人機燈光秀最佳觀賞地點。</p>
                 </div>
 
-                <!-- Hotel 2 -->
                 <div class="card-doodle bg-white dark:bg-cardDark p-5 space-y-2">
                     <div class="flex justify-between items-start">
                         <div>
@@ -462,7 +422,6 @@
                     <p class="text-xs text-gray-600 dark:text-gray-300">📍 距 Kent Hotel 僅走路 2 分鐘，換飯店超輕鬆！房內直接遠眺廣安大橋。</p>
                 </div>
 
-                <!-- Hotel 3 -->
                 <div class="card-doodle bg-white dark:bg-cardDark p-5 space-y-2">
                     <div class="flex justify-between items-start">
                         <div>
@@ -477,20 +436,17 @@
             </div>
         </section>
 
-        <!-- ==================== TAB 7: 待辦與行李 (TODO) ==================== -->
+        <!-- TAB 7: 待辦清單 -->
         <section id="tab-todo" class="tab-content hidden space-y-6">
             <h2 class="text-2xl font-bold font-hand flex items-center gap-2">
                 <i class="fas fa-check-square text-emerald-500"></i> 行前準備與行李清單
             </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="todoCategoriesContainer">
-                <!-- Javascript dynamic generation -->
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="todoCategoriesContainer"></div>
         </section>
 
     </main>
 
-    <!-- Detail Modal Popup -->
+    <!-- Detail Modal -->
     <div id="detailModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="card-doodle bg-white dark:bg-cardDark max-w-lg w-full max-h-[85vh] overflow-y-auto p-5 space-y-4 relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-black dark:hover:text-white font-bold text-xl">✕</button>
@@ -510,7 +466,6 @@
             </div>
 
             <div class="flex items-center justify-between pt-2">
-                <a id="modalOfficialLink" href="#" target="_blank" class="text-xs text-blue-600 underline dark:text-blue-400 hidden">官方網站/詳細說明</a>
                 <a id="modalNaverBtn" href="#" target="_blank" class="px-4 py-2 bg-emerald-500 text-white font-bold text-xs rounded-xl shadow border border-doodleDark ml-auto">
                     <i class="fas fa-map-marker-alt mr-1"></i> NAVER Map 導航
                 </a>
@@ -518,21 +473,16 @@
         </div>
     </div>
 
-    <!-- Application Script -->
     <script>
-        /* ==================== GLOBAL STATE & DATA ==================== */
         let currentTheme = localStorage.getItem('busan_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         let currentDay = 1;
         let backupCategory = 'attractions';
-        let exchangeRate = parseFloat(localStorage.getItem('busan_rate')) || 42.5;
+        let krwToTwdRate = parseFloat(localStorage.getItem('cached_krw_rate')) || 0.024;
 
-        // Sample Expenses Data
         let expenses = JSON.parse(localStorage.getItem('busan_expenses')) || [
-            { id: 1, title: '機場巴士至廣安里', category: '交通', krw: 6000 },
-            { id: 2, title: ' Visit Busan Pass 領取', category: '其他', krw: 0 }
+            { id: 1, title: '機場巴士至廣安里', category: '交通', krw: 6000 }
         ];
 
-        // Sample Todo Items Data
         let todoData = JSON.parse(localStorage.getItem('busan_todos')) || {
             '重要護照與證件': [
                 { id: 't1', text: '護照 (效期6個月以上)', checked: true },
@@ -546,89 +496,81 @@
                 { id: 't7', text: '網卡 / eSIM 設定完成', checked: true }
             ],
             '衣物與個人用品': [
-                { id: 't8', text: '秋季保暖外套 (10/31-11/06海風大)', checked: false },
+                { id: 't8', text: '秋季保暖外套 (海風大)', checked: false },
                 { id: 't9', text: '好走的運動鞋', checked: true },
-                { id: 't10', text: '個人保養品與個人藥品', checked: false }
+                { id: 't10', text: '個人保養品與藥品', checked: false }
             ]
         };
 
-        // Complete Itinerary Dataset
         const itineraryData = {
             1: [
-                { time: "18:25", title: "抵達金海國際機場", krName: "김해국제공항", type: "transport", drive: "巴士約 45-60 分鐘", stay: "45分鐘", tag: "必做", desc: "下飛機至國際線 1樓 Gate 3 領取 Visit Busan Pass 實體卡，隨後搭乘機場巴士直達廣安里。", address: "釜山廣域市江西區空港路108", nav: "https://map.naver.com/v5/search/김해국제공항", details: { feature: "金海國際機場為釜山對外主要機場。", hours: "24小時", off: "無", tickets: "免費", parking: "有付費停車場", notes: "注意抵達後盡快至 Gate 3 領取 Pass" } },
-                { time: "20:00", title: "Check-in Kent Hotel Gwangalli", krName: "켄트호텔 광안리", type: "hotel", drive: "步行即達", stay: "30分鐘", tag: "住宿", desc: "辦理登記入住，放置行李並準備出門看無人機燈光秀與享用晚餐。", address: "釜山廣域市水營區廣安海邊路229", nav: "https://map.naver.com/v5/search/켄트호텔 광안리", details: { feature: "海景第一排精品飯店", hours: "Check-in 15:00", off: "無", tickets: "依訂房價格", parking: "有", notes: "櫃檯服務人員可用英文溝通" } },
-                { time: "20:30", title: "廣安里無人機燈光秀", krName: "광안리 M 드론라이트쇼", type: "spot", drive: "步行 2 分鐘", stay: "30分鐘", tag: "必去", desc: "廣安里海灘欣賞震撼的夜間無人機排字演出。", address: "廣安里海水浴場沙灘區", nav: "https://map.naver.com/v5/search/광안리해수욕장", details: { feature: "每週特定時段進行幾百架無人機表演", hours: "夜間依官方公告", off: "天候不佳取消", tickets: "免費", parking: "周邊公有停車場", notes: "海邊風大請注意保暖" } },
-                { time: "21:00", title: "晚餐：83 haechi 烤肉", krName: "83해치", type: "food", drive: "步行/短程計程車", stay: "90分鐘", tag: "美食", desc: "極受歡迎的美味專人代烤豬肉。（備案：Samhwan Chuksan Gwangan 삼환축산 / 釜山宅 부산댁）", address: "釜山水營區廣安洞", nav: "https://map.naver.com/v5/search/83해치 광안", details: { feature: "專人代烤肉質厚實多汁", hours: "16:00 - 24:00", off: "待確認", tickets: "依點餐計費", parking: "無專用", notes: "建議下飛機即遠端候位" } }
+                { time: "18:25", title: "抵達金海國際機場", krName: "김해국제공항", type: "transport", drive: "巴士約 45-60 分鐘", stay: "45分鐘", tag: "必做", desc: "至國際線 1樓 Gate 3 領取 Visit Busan Pass 實體卡，搭乘機場巴士直達廣安里。", address: "釜山廣域市江西區空港路108", nav: "https://map.naver.com/v5/search/김해국제공항", details: { feature: "金海國際機場。", hours: "24小時", off: "無", tickets: "免費", parking: "有付費停車場", notes: "抵達後盡快領取 Pass" } },
+                { time: "20:00", title: "Check-in Kent Hotel Gwangalli", krName: "켄트호텔 광안리", type: "hotel", drive: "步行即達", stay: "30分鐘", tag: "住宿", desc: "登記入住並放置行李。", address: "釜山廣域市水營區廣安海邊路229", nav: "https://map.naver.com/v5/search/켄트호텔 광안리", details: { feature: "海景第一排精品飯店", hours: "Check-in 15:00", off: "無", tickets: "--", parking: "有", notes: "櫃檯服務人員可用英文溝通" } },
+                { time: "20:30", title: "廣安里無人機燈光秀", krName: "광안리 M 드론라이트쇼", type: "spot", drive: "步行 2 分鐘", stay: "30分鐘", tag: "必去", desc: "廣安里海灘欣賞震撼無人機表演。", address: "廣安里海水浴場沙灘區", nav: "https://map.naver.com/v5/search/광안리해수욕장", details: { feature: "夜間幾百架無人機燈光表演", hours: "夜間依官方公告", off: "天候不佳取消", tickets: "免費", parking: "公有停車場", notes: "海邊風大注意保暖" } },
+                { time: "21:00", title: "晚餐：83 haechi 烤肉", krName: "83해치", type: "food", drive: "步行/計程車", stay: "90分鐘", tag: "美食", desc: "專人代烤豬肉。（備案：Samhwan Chuksan Gwangan / 釜山宅）", address: "釜山水營區廣安洞", nav: "https://map.naver.com/v5/search/83해치 광안", details: { feature: "專人代烤肉質厚實", hours: "16:00 - 24:00", off: "待確認", tickets: "依點餐計費", parking: "無專用", notes: "建議下飛機即線上候位" } }
             ],
             2: [
-                { time: "09:00", title: "換飯店至 Homers Hotel", krName: "호메르스 호텔", type: "hotel", drive: "步行 2 分鐘", stay: "20分鐘", tag: "住宿", desc: "將行李寄放至 Homers Hotel（距 Kent Hotel 僅走路 2 分鐘）。", address: "釜山廣域市水營區廣安海邊路217", nav: "https://map.naver.com/v5/search/호메르스 호텔", details: { feature: "廣安里老牌無敵海景飯店", hours: "寄放行李", off: "無", tickets: "--", parking: "有", notes: "走路2分鐘非常便利" } },
-                { time: "10:30", title: "Skyline Luge 斜坡滑車", krName: "스카inline루지 부산", type: "spot", drive: "計程車/公車 35分鐘", stay: "2小時", tag: "必去", desc: "體驗刺激好玩的重力斜坡滑車與高空纜車。", address: "釜山機張郡機張邑侍郎里", nav: "https://map.naver.com/v5/search/스카이라인루지 부산", details: { feature: "多條滑道與俯瞰樂天世界景觀", hours: "10:00 - 19:00", off: "無", tickets: "Pass包含或現場購票", parking: "有", notes: "注意安全隨身物品" } },
-                { time: "12:30", title: "海東龍宮寺", krName: "해동용궁사", type: "spot", drive: "車程 10 分鐘", stay: "1小時", tag: "必去", desc: "韓國唯一一座建於海邊崖壁上的古剎，風景宏偉。", address: "釜山機張郡機張邑龍宮吉86", nav: "https://map.naver.com/v5/search/해동용궁사", details: { feature: "依山傍海的奇景寺廟", hours: "05:00 - 19:20", off: "無", tickets: "免費", parking: "有付費停車場", notes: "階梯較多建議穿好走鞋" } },
-                { time: "13:30", title: "午餐：hai 水產吃帝王蟹", krName: "하이수산", type: "food", drive: "車程 10 分鐘", stay: "90分鐘", tag: "美食", desc: "現挑現蒸鮮美帝王蟹與松葉蟹，肉質扎實甘甜。", address: "機張海邊路附近", nav: "https://map.naver.com/v5/search/하이수산", details: { feature: "價格透明鮮美大蟹", hours: "11:00 - 21:00", off: "待確認", tickets: "時價計費", parking: "有", notes: "蟹黃炒飯必點" } },
-                { time: "15:30", title: "樂天 Premium Outlet & 新世界百貨", krName: "롯데프리미엄아울렛 동부산점", type: "spot", drive: "車程 10 分鐘", stay: "2.5小時", tag: "購物", desc: "東釜山樂天 Outlet 逛街採買，傍晚可轉往 Centum City 新世界百貨。", address: "釜山機張郡機張邑奇張海邊路147", nav: "https://map.naver.com/v5/search/롯데프리미엄아울렛 동부산점", details: { feature: "超大露天Outlet與各大品牌", hours: "10:30 - 21:00", off: "待確認", tickets: "免費", parking: "大型停車場", notes: "記得帶護照辦理退稅" } },
-                { time: "18:30", title: "備用晚餐：濟州屋頂 (제주옥탑)", krName: "제주옥탑 해운대점", type: "food", drive: "地鐵/計程車 20分鐘", stay: "90分鐘", tag: "佳誼推薦", desc: "佳誼推薦的高品質濟州黑豬肉烤肉店，豬皮與黑豬五花極推！", address: "釜山海雲台區佑洞", nav: "https://map.naver.com/v5/search/제주옥탑 해운대점", details: { feature: "濟州石頭爺爺風格造型烤肉", hours: "16:00 - 01:00", off: "無", tickets: "依點餐計費", parking: "待確認", notes: "熱門時段需候位" } }
+                { time: "09:00", title: "換飯店至 Homers Hotel", krName: "호메르스 호텔", type: "hotel", drive: "步行 2 分鐘", stay: "20分鐘", tag: "住宿", desc: "行李寄放至 Homers Hotel（走路 2 分鐘）。", address: "釜山廣域市水營區廣安海邊路217", nav: "https://map.naver.com/v5/search/호메르스 호텔", details: { feature: "廣安里無敵海景飯店", hours: "寄放行李", off: "無", tickets: "--", parking: "有", notes: "距離 Kent Hotel 極近" } },
+                { time: "10:30", title: "Skyline Luge 斜坡滑車", krName: "스카inline루지 부산", type: "spot", drive: "車程 35分鐘", stay: "2小時", tag: "必去", desc: "體驗斜坡滑車與高空纜車。", address: "釜山機張郡機張邑侍郎里", nav: "https://map.naver.com/v5/search/스카이라인루지 부산", details: { feature: "重力斜坡滑車景點", hours: "10:00 - 19:00", off: "無", tickets: "Pass包含或現場購票", parking: "有", notes: "注意安全" } },
+                { time: "12:30", title: "海東龍宮寺", krName: "해동용궁사", type: "spot", drive: "車程 10 分鐘", stay: "1小時", tag: "必去", desc: "建於海邊崖壁上的古剎。", address: "釜山機張郡機張邑龍宮吉86", nav: "https://map.naver.com/v5/search/해동용궁사", details: { feature: "依山傍海奇景寺廟", hours: "05:00 - 19:20", off: "無", tickets: "免費", parking: "有付費停車場", notes: "階梯較多穿好走鞋" } },
+                { time: "13:30", title: "午餐：hai 水產吃帝王蟹", krName: "하이수산", type: "food", drive: "車程 10 分鐘", stay: "90分鐘", tag: "美食", desc: "現挑現蒸鮮美帝王蟹與松葉蟹。", address: "機張海邊路附近", nav: "https://map.naver.com/v5/search/하이수산", details: { feature: "價格透明鮮美大蟹", hours: "11:00 - 21:00", off: "待確認", tickets: "時價計費", parking: "有", notes: "蟹黃炒飯必點" } },
+                { time: "15:30", title: "樂天 Premium Outlet & 新世界百貨", krName: "롯데프리미엄아울렛", type: "spot", drive: "車程 10 分鐘", stay: "2.5小時", tag: "購物", desc: "東釜山樂天 Outlet 採買，轉往 Centum City 新世界百貨。", address: "釜山機張郡機張海邊路147", nav: "https://map.naver.com/v5/search/롯데프리미엄아울렛 동부산점", details: { feature: "超大露天Outlet", hours: "10:30 - 21:00", off: "待確認", tickets: "免費", parking: "大型停車場", notes: "帶護照退稅" } },
+                { time: "18:30", title: "備用晚餐：濟州屋頂 (제주옥탑)", krName: "제주옥탑 해운대점", type: "food", drive: "車程 20分鐘", stay: "90分鐘", tag: "推薦", desc: "佳誼推薦的高品質濟州黑豬肉烤肉店！", address: "釜山海雲台區佑洞", nav: "https://map.naver.com/v5/search/제주옥탑 해운대점", details: { feature: "濟州石頭爺爺風格烤肉", hours: "16:00 - 01:00", off: "無", tickets: "依點餐", parking: "待確認", notes: "熱門時段需候位" } }
             ],
             3: [
-                { time: "08:30", title: "早餐：All Sunday Bagel", krName: "올선데이", type: "food", drive: "步行 5 分鐘", stay: "45分鐘", tag: "美食", desc: "人氣超高的現烤貝果名店，搭配各式抹醬超美味。", address: "廣安里海邊周邊", nav: "https://map.naver.com/v5/search/올선데이 광안", details: { feature: "外酥內軟手作貝果", hours: "08:00 - 19:00", off: "待確認", tickets: "約 3,500-5,000 KRW", parking: "無", notes: "開門即有排隊人潮" } },
-                { time: "09:00", title: "Spa Land 汗蒸幕", krName: "스파랜드 센텀시티", type: "spot", drive: "地鐵 15 分鐘", stay: "3小時", tag: "必去", desc: "先至新世界百貨 3 樓兌換會員卡/Pass，享受高級天然溫泉與各式主題汗蒸房。", address: "釜山海雲台區Centum南路35 新世界百貨1F", nav: "https://map.naver.com/v5/search/스파랜드 센텀시티", details: { feature: "韓國五星級汗蒸幕體驗", hours: "09:00 - 22:00", off: "百貨公休日", tickets: "Visit Busan Pass 免費兌換 4小時", parking: "百貨停車場", notes: "先去3樓換會員卡" } },
-                { time: "12:30", title: "午餐：大海鮑魚粥 & 名品糖餅", krName: "다해해물아구찜 / 名品糖餅", type: "food", drive: "地鐵 10 分鐘", stay: "1小時", tag: "美食", desc: "前往海雲台傳統市場享用濃郁鮮美的鮑魚粥，隨後品嚐香酥堅果名品糖餅。", address: "海雲台傳統市場內", nav: "https://map.naver.com/v5/search/해운대전통시장", details: { feature: "傳統地道釜山小吃", hours: "10:00 - 21:00", off: "無", tickets: "平價", parking: "公有停車場", notes: "糖餅現做非常燙口" } },
-                { time: "14:00", title: "點心：老虎冰淇淋大福", krName: "호랑이재떡", type: "food", drive: "步行 10 分鐘", stay: "30分鐘", tag: "甜點", desc: "色彩繽紛 Q 彈的大福包覆香濃冰淇淋。", address: "海雲台迎月路附近", nav: "https://map.naver.com/v5/search/호랑이재떡", details: { feature: "造型可愛的手作冰淇淋麻糬", hours: "11:00 - 20:00", off: "待確認", tickets: "約 4,000 KRW/個", parking: "無", notes: "適合拍拍照拍照打卡" } },
-                { time: "15:30", title: "海雲台膠囊列車 (尾浦 ➡️ 青沙浦)", krName: "해운대블루라인파크 미포정거장", type: "spot", drive: "步行至尾浦站", stay: "45分鐘", tag: "必去", desc: "已預約 15:30！搭乘可愛繽紛的彩色天空膠囊列車俯瞰蔚藍海景。", address: "釜山海雲台區迎月路62번길 13", nav: "https://map.naver.com/v5/search/해운대블루라인파크 미포정거장", details: { feature: "釜山超人氣海景膠囊列車", hours: "15:30 預約場次", off: "無", tickets: "已預約憑證", parking: "尾浦停車場", notes: "務必提前15分鐘報到" } },
-                { time: "16:30", title: "青沙浦 Cafe Liberta & 海岸列車回程", krName: "리베르타 / 청사포", type: "spot", drive: "青沙浦散步", stay: "1.5小時", tag: "咖啡", desc: "青沙浦灌籃高手平交道拍照，在 Cafe Liberta 喝咖啡看海，搭乘海岸列車返回尾浦。", address: "釜山海雲台區青沙浦路", nav: "https://map.naver.com/v5/search/리베르타 청사포", details: { feature: "海景第一排精品咖啡廳", hours: "10:00 - 22:00", off: "無", tickets: "低消一杯飲品", parking: "青沙浦公有", notes: "海岸列車Pass可免費搭乘" } },
-                { time: "19:00", title: "晚餐：東大門獵奇辣炒年糕 & Puradak 炸雞", krName: "동대문엽기떡볶이 / 푸라닭 치킨", type: "food", drive: "外帶或外送至飯店", stay: "90分鐘", tag: "美食", desc: "經典韓式超辣年糕配上黑魔鬼精品 Puradak 炸雞，極致享受！（註：新世界百貨 20:30 打烊）", address: "海雲台/廣安里分店", nav: "https://map.naver.com/v5/search/푸라닭 광안", details: { feature: "韓國超狂宵夜組合", hours: "12:00 - 24:00", off: "無", tickets: "依點餐", parking: "--", notes: "年糕辣度可選微辣" } }
+                { time: "08:30", title: "早餐：All Sunday Bagel", krName: "올선데이", type: "food", drive: "步行 5 分鐘", stay: "45分鐘", tag: "美食", desc: "人氣現烤貝果名店，搭配各式抹醬。", address: "廣安里海邊周邊", nav: "https://map.naver.com/v5/search/올선데이 광안", details: { feature: "手作美味貝果", hours: "08:00 - 19:00", off: "待確認", tickets: "約 3,500 KRW/個", parking: "無", notes: "開門即排隊" } },
+                { time: "09:00", title: "Spa Land 汗蒸幕", krName: "스파랜드 센텀시티", type: "spot", drive: "地鐵 15 分鐘", stay: "3小時", tag: "必去", desc: "先至新世界百貨 3 樓兌換會員卡/Pass，享受高級汗蒸幕。", address: "新世界百貨1F", nav: "https://map.naver.com/v5/search/스파랜드 센텀시티", details: { feature: "五星級汗蒸幕體驗", hours: "09:00 - 22:00", off: "百貨公休日", tickets: "Visit Busan Pass 免費兌換", parking: "百貨停車場", notes: "先至3樓換會員卡" } },
+                { time: "12:30", title: "午餐：大海鮑魚粥 & 名品糖餅", krName: "해운대전통시장", type: "food", drive: "地鐵 10 分鐘", stay: "1小時", tag: "美食", desc: "海雲台傳統市場享用鮑魚粥與堅果糖餅。", address: "海雲台傳統市場內", nav: "https://map.naver.com/v5/search/해운대전통시장", details: { feature: "地道釜山小吃", hours: "10:00 - 21:00", off: "無", tickets: "平價", parking: "公有停車場", notes: "糖餅現做燙口" } },
+                { time: "14:00", title: "點心：老虎冰淇淋大福", krName: "호랑이재떡", type: "food", drive: "步行 10 分鐘", stay: "30分鐘", tag: "甜點", desc: "Q 彈大福包覆香濃冰淇淋。", address: "海雲台迎月路附近", nav: "https://map.naver.com/v5/search/호랑이재떡", details: { feature: "造型可愛手作冰淇淋麻糬", hours: "11:00 - 20:00", off: "待確認", tickets: "約 4,000 KRW", parking: "無", notes: "適合拍照打卡" } },
+                { time: "15:30", title: "海雲台膠囊列車 (尾浦 ➡️ 青沙浦)", krName: "해운대블루라인파크", type: "spot", drive: "步行至尾浦", stay: "45分鐘", tag: "預約", desc: "預約 15:30！搭乘彩色天空膠囊列車俯瞰海景。", address: "釜山海雲台區迎月路62번길 13", nav: "https://map.naver.com/v5/search/해운대블루라인파크 미포정거장", details: { feature: "人氣海景膠囊列車", hours: "15:30 預約場次", off: "無", tickets: "已預約憑證", parking: "尾浦停車場", notes: "提早15分鐘報到" } },
+                { time: "16:30", title: "青沙浦 Cafe Liberta & 海岸列車", krName: "리베르타", type: "spot", drive: "散步", stay: "1.5小時", tag: "咖啡", desc: "Cafe Liberta 喝咖啡看海，搭乘海岸列車返回尾浦。", address: "釜山海雲台區青沙浦路", nav: "https://map.naver.com/v5/search/리베르타 청사포", details: { feature: "海景第一排咖啡廳", hours: "10:00 - 22:00", off: "無", tickets: "低消一杯", parking: "青沙浦公有", notes: "Pass可免費搭海岸列車" } },
+                { time: "19:00", title: "晚餐：獵奇辣炒年糕 & Puradak 炸雞", krName: "푸라닭 치킨", type: "food", drive: "外帶/外送", stay: "90分鐘", tag: "美食", desc: "超辣年糕配上黑魔鬼 Puradak 炸雞！（新世界百貨 20:30 打烊）", address: "廣安里分店", nav: "https://map.naver.com/v5/search/푸라닭 광안", details: { feature: "經典韓國宵夜組合", hours: "12:00 - 24:00", off: "無", tickets: "依點餐", parking: "--", notes: "年糕辣度可選" } }
             ],
             4: [
-                { time: "09:00", title: "早餐：水邊豬肉湯飯 or 安木", krName: "수변돼지국밥 / 안목", type: "food", drive: "公車 15 分鐘", stay: "1小時", tag: "必吃", desc: "釜山靈魂美食！豬肉湯飯湯頭濃郁順口，亦可選擇米其林推薦安木豬肉湯飯。", address: "釜山水영區廣安洞", nav: "https://map.naver.com/v5/search/수변돼지국밥", details: { feature: "在地老字號濃厚豬肉湯飯", hours: "08:00 - 22:00", off: "無", tickets: "約 9,000-10,000 KRW", parking: "有", notes: "附韭菜與蝦醬可自行調味" } },
-                { time: "10:30", title: "ANCIEN 麵包店 & Scentica 香氛", krName: "ANCIEN / Scentica", type: "spot", drive: "步行", stay: "1.5小時", tag: "逛街", desc: "買招牌明太子法棍，隨後至 Scentica 手作專屬香水與香氛。", address: "廣安里海邊商圈", nav: "https://map.naver.com/v5/search/Scentica 광안", details: { feature: "質感烘焙與客製調香體驗", hours: "11:00 - 20:00", off: "待確認", tickets: "依消費", parking: "無", notes: "明太子法棍熱門易售罄" } },
-                { time: "12:30", title: "入住 Urban Groove Hotel & 市民公园賞楓", krName: "어반그루브 호텔 / 부산시민공원", type: "hotel", drive: "計程車 25 分鐘", stay: "2小時", tag: "楓葉", desc: "移動至西面入住 Urban Groove Hotel，下午至釜山市民公園漫步欣賞秋季金黃楓葉。", address: "釜山釜山鎮區市民公園路175", nav: "https://map.naver.com/v5/search/부산시민공원", details: { feature: "超大綠地公園與美麗楓葉林", hours: "05:00 - 24:00", off: "無", tickets: "免費", parking: "公園停車場", notes: "拍照打卡絕佳景點" } },
-                { time: "15:00", title: "田浦咖啡街 & 南浦洞 BIFF 廣場", krName: "전포카페거리 / BIFF 광장", type: "spot", drive: "地鐵 15 分鐘", stay: "3小時", tag: "必去", desc: "探索田浦文青咖啡街特色小店，晚上前往南浦洞 BIFF 廣場感受熱鬧電影街氛圍。", address: "釜山中區 BIFF 廣場路", nav: "https://map.naver.com/v5/search/BIFF광장", details: { feature: "小吃攤商林立與手印大道", hours: "全天", off: "無", tickets: "免費", parking: "周邊停車場", notes: "黑糖餅與堅果餅必吃" } },
-                { time: "18:30", title: "晚餐：密親烤腸 or 八爪魚 (西面)", krName: "미친막창 / 일화정연탄", type: "food", drive: "地鐵 15 分鐘", stay: "1.5小時", tag: "美食", desc: "西面超邪惡密親烤腸，或選擇 Ilhwa Jeongyeontan 炭火香烤八爪魚。", address: "釜山鎮區西面", nav: "https://map.naver.com/v5/search/미친막창 서면", details: { feature: "香濃醬汁與 Q 彈烤腸", hours: "16:00 - 02:00", off: "待確認", tickets: "約 15,000 KRW/人", parking: "無", notes: "適合配一杯燒啤" } },
-                { time: "21:30", title: "宵夜：南浦洞 54 號布帳馬車", krName: "남포동 포장마차 54번", type: "food", drive: "步行/地鐵", stay: "1小時", tag: "地道", desc: "札嘎其站附近的 54 號布帳馬車，體驗地道韓國路邊攤海鮮與小酒。", address: "札嘎其站 3 號出口附近路邊", nav: "https://map.naver.com/v5/search/자갈치역 포장마차", details: { feature: "韓劇經典路邊攤布帳馬車", hours: "18:00 - 02:00", off: "雨天休業", tickets: "現金支付", parking: "無", notes: "建議準備韓元現金" } }
+                { time: "09:00", title: "早餐：水邊豬肉湯飯 or 安木", krName: "수변돼지국밥", type: "food", drive: "公車 15 分鐘", stay: "1小時", tag: "必吃", desc: "釜山靈魂美食豬肉湯飯，或米其林推薦安木。", address: "釜山水營區廣安洞", nav: "https://map.naver.com/v5/search/수변돼지국밥", details: { feature: "老字號濃厚豬肉湯飯", hours: "08:00 - 22:00", off: "無", tickets: "約 9,500 KRW", parking: "有", notes: "附韭菜與蝦醬" } },
+                { time: "10:30", title: "ANCIEN 麵包店 & Scentica 香氛", krName: "ANCIEN / Scentica", type: "spot", drive: "步行", stay: "1.5小時", tag: "逛街", desc: "買招牌明太子法棍，至 Scentica 手作專屬香氛。", address: "廣安里商圈", nav: "https://map.naver.com/v5/search/Scentica 광안", details: { feature: "質感烘焙與調香體驗", hours: "11:00 - 20:00", off: "待確認", tickets: "依消費", parking: "無", notes: "明太子法棍熱門" } },
+                { time: "12:30", title: "Urban Groove Hotel & 市民公園賞楓", krName: "부산시민공원", type: "spot", drive: "計程車 25 分鐘", stay: "2小時", tag: "楓葉", desc: "入住 Urban Groove，下午至釜山市民公園漫步賞楓。", address: "釜山鎮區市民公園路175", nav: "https://map.naver.com/v5/search/부산시민공원", details: { feature: "綠地公園與秋季楓葉林", hours: "05:00 - 24:00", off: "無", tickets: "免費", parking: "公園停車場", notes: "打卡拍照絕佳" } },
+                { time: "15:00", title: "田浦咖啡街 & 南浦洞 BIFF 廣場", krName: "전포카페거리 / BIFF 광장", type: "spot", drive: "地鐵 15 分鐘", stay: "3小時", tag: "必去", desc: "逛田浦文青咖啡街，晚上前往南浦洞 BIFF 廣場。", address: "釜山中區 BIFF 廣場路", nav: "https://map.naver.com/v5/search/BIFF광장", details: { feature: "熱鬧美食攤商林立", hours: "全天", off: "無", tickets: "免費", parking: "周邊停車場", notes: "堅果黑糖餅必吃" } },
+                { time: "18:30", title: "晚餐：密親烤腸 or 八爪魚 (西面)", krName: "미친막창 / 일화정연탄", type: "food", drive: "地鐵 15 分鐘", stay: "1.5小時", tag: "美食", desc: "西面密親烤腸或 Ilhwa Jeongyeontan 炭火烤八爪魚。", address: "釜山鎮區西面", nav: "https://map.naver.com/v5/search/미친막창 서면", details: { feature: "香濃醬汁與 Q 彈烤腸", hours: "16:00 - 02:00", off: "待確認", tickets: "約 15,000 KRW/人", parking: "無", notes: "適合搭配燒啤" } },
+                { time: "21:30", title: "宵夜：南浦洞 54 號布帳馬車", krName: "남포동 포장마차 54번", type: "food", drive: "步行/地鐵", stay: "1小時", tag: "地道", desc: "札嘎其站 54 號布帳馬車體驗路邊攤海鮮與小酒。", address: "札嘎其站 3 號出口附近", nav: "https://map.naver.com/v5/search/자갈치역 포장마차", details: { feature: "韓劇經典路邊攤布帳馬車", hours: "18:00 - 02:00", off: "雨天休業", tickets: "現金支付", parking: "無", notes: "建議準備現金" } }
             ],
             5: [
-                { time: "09:00", title: "甘川洞文化村", krName: "감천문화마을", type: "spot", drive: "公車/計程車 20分鐘", stay: "1.5小時", tag: "必去", desc: "彩色積木房子與小王子雕像合照，逛手作小店買襪子與 Bada Sand 餅乾禮盒。", address: "釜山沙下區甘內2路144", nav: "https://map.naver.com/v5/search/감천문화마을", details: { feature: "釜山聖托里尼彩色山城", hours: "09:00 - 18:00", off: "無", tickets: "免費 (地圖約2,000 KRW)", parking: "入口停車場", notes: "住宅區請保持安靜" } },
-                { time: "11:00", title: "午餐：新東亞市場 #8587/#100 帝王蟹", krName: "신동아수산물종합시장", type: "food", drive: "計程車 10 分鐘", stay: "1.5小時", tag: "美食", desc: "前往新東亞市場 8587 號或 100 號攤位大快朵頤現蒸帝王蟹與海鮮。", address: "釜山中區札嘎其海岸路56", nav: "https://map.naver.com/v5/search/신동아수산물종합시장", details: { feature: "平價新鮮現砍現蒸海鮮", hours: "09:00 - 21:00", off: "隔週二公休", tickets: "時價", parking: "市場停車場", notes: "可現場殺價講價" } },
-                { time: "13:00", title: "松島海上纜車 (來回)", krName: "송도해상케이블카", type: "spot", drive: "計程車 15 分鐘", stay: "1.5小時", tag: "必去", desc: "搭乘透明水晶纜車跨越蔚藍海洋，俯瞰松島海水浴場與龍宮雲橋。", address: "釜山西區松島海邊路171", nav: "https://map.naver.com/v5/search/송도해상케이블카", details: { feature: "韓國首座跨海纜車", hours: "09:00 - 20:00", off: "無", tickets: "Pass包含或現場購票", parking: "有", notes: "水晶車廂底板全透明" } },
-                { time: "15:00", title: "白淺灘文化村 (白淺村)", krName: "흰여울문화마을", type: "spot", drive: "公車 20 分鐘", stay: "1.5小時", tag: "必去", desc: "懸崖峭壁上的海景村落，沿著海景步道散步、拍絕美海景隧道照片。", address: "釜山影島區絕影路222", nav: "https://map.naver.com/v5/search/흰여울문화마을", details: { feature: "辯護人電影取景地與海景咖啡館", hours: "全天", off: "無", tickets: "免費", parking: "沿線付費停車格", notes: "階梯較多建議穿舒服的鞋" } },
-                { time: "17:00", title: "Arte Museum (時間允許) / 南浦洞時尚街", krName: "아르떼뮤지엄 부산 / 남포동", type: "spot", drive: "公車 15 分鐘", stay: "2小時", tag: "備用", desc: "沉浸式光影藝術館 Arte Museum，或前往南浦洞時尚街與樂天百貨購物。", address: "釜山影島區東三洞", nav: "https://map.naver.com/v5/search/아르떼뮤지엄 부산", details: { feature: "超震撼光影藝術展示", hours: "10:00 - 20:00", off: "無", tickets: "約 19,000 KRW", parking: "有", notes: "拍照極度出片" } },
-                { time: "19:30", title: "晚餐：元祖西面牛排骨肉 (南浦店)", krName: "서면소갈비살 남포점", type: "food", drive: "步行", stay: "1.5小時", tag: "美食", desc: "品嚐炭火鮮嫩醬燒牛排骨肉。（備案：Samhwan 韓牛 / 李在模披薩 이재모피자）", address: "釜山中區南浦洞", nav: "https://map.naver.com/v5/search/서면소갈비살 남포점", details: { feature: "肉質鮮嫩 CP 值極高烤牛肉", hours: "16:00 - 23:00", off: "無", tickets: "約 12,000 KRW/份", parking: "無", notes: "醬燒味非常入味" } }
+                { time: "09:00", title: "甘川洞文化村", krName: "감천문화마을", type: "spot", drive: "公車/計程車 20分鐘", stay: "1.5小時", tag: "必去", desc: "彩色小屋與小王子合照，買襪子與 Bada Sand 餅乾。", address: "釜山沙下區甘內2路144", nav: "https://map.naver.com/v5/search/감천문화마을", details: { feature: "繽紛山城景點", hours: "09:00 - 18:00", off: "無", tickets: "免費", parking: "入口停車場", notes: "住宅區請保持安靜" } },
+                { time: "11:00", title: "午餐：新東亞市場 #8587/#100 帝王蟹", krName: "신동아수산물종합시장", type: "food", drive: "計程車 10 分鐘", stay: "1.5小時", tag: "美食", desc: "新東亞市場 8587 或 100 號攤位大快朵頤現蒸帝王蟹。", address: "釜山中區札嘎其海岸路56", nav: "https://map.naver.com/v5/search/신동아수산물종합시장", details: { feature: "平價新鮮現蒸海鮮", hours: "09:00 - 21:00", off: "隔週二公休", tickets: "時價", parking: "市場停車場", notes: "可現場講價" } },
+                { time: "13:00", title: "松島海上纜車 (來回)", krName: "송도해상케이블카", type: "spot", drive: "計程車 15 分鐘", stay: "1.5小時", tag: "必去", desc: "搭乘透明水晶纜車跨越海洋，俯瞰松島海景。", address: "釜山西區松島海邊路171", nav: "https://map.naver.com/v5/search/송도해상케이블카", details: { feature: "韓國首座跨海纜車", hours: "09:00 - 20:00", off: "無", tickets: "Pass包含或現場購票", parking: "有", notes: "水晶車廂全透明" } },
+                { time: "15:00", title: "白淺灘文化村 (白淺村)", krName: "흰여울문화마을", type: "spot", drive: "公車 20 分鐘", stay: "1.5小時", tag: "必去", desc: "懸崖海景村落，沿海景步道散步、拍海景隧道。", address: "釜山影島區絕影路222", nav: "https://map.naver.com/v5/search/흰여울문화마을", details: { feature: "辯護人電影取景地", hours: "全天", off: "無", tickets: "免費", parking: "沿線停車格", notes: "階梯多穿好走鞋" } },
+                { time: "17:00", title: "Arte Museum / 南浦洞時尚街", krName: "아르떼뮤지엄 부산", type: "spot", drive: "公車 15 分鐘", stay: "2小時", tag: "備用", desc: "光影藝術館 Arte Museum 或南浦洞時尚街採買。", address: "釜山影島區東三洞", nav: "https://map.naver.com/v5/search/아르떼뮤지엄 부산", details: { feature: "震撼光影藝術展示", hours: "10:00 - 20:00", off: "無", tickets: "約 19,000 KRW", parking: "有", notes: "拍照極度出片" } },
+                { time: "19:30", title: "晚餐：元祖西面牛排骨肉 (南浦店)", krName: "서면소갈비살 남포점", type: "food", drive: "步行", stay: "1.5小時", tag: "美食", desc: "炭火鮮嫩醬燒牛排骨肉。（備案：Samhwan 韓牛 / 李在模披薩）", address: "釜山中區南浦洞", nav: "https://map.naver.com/v5/search/서면소갈비살 남포점", details: { feature: "CP 值高烤牛肉", hours: "16:00 - 23:00", off: "無", tickets: "約 12,000 KRW/份", parking: "無", notes: "醬燒味入味" } }
             ],
             6: [
-                { time: "09:00", title: "醫美診所預約行程", krName: "부산 피부과 / 성형외과", type: "spot", drive: "地鐵/步行", stay: "4小時", tag: "醫美", desc: "09:00 - 13:00 已預約西面醫美皮膚管理療程與保養。", address: "釜山廣域市釜山鎮區西面醫美街", nav: "https://map.naver.com/v5/search/서면 피부과", details: { feature: "韓國頂級皮膚保養管理", hours: "09:00 - 13:00 (預約)", off: "週日", tickets: "依診所療程", parking: "診所停車", notes: "請攜帶護照進行退稅登記" } },
-                { time: "14:00", title: "午後西面商圈輕鬆購物散步", krName: "서면상권", type: "spot", drive: "步行", stay: "3小時", tag: "購物", desc: "逛 NC 百貨、地下街服飾與 Olive Young 採買韓國彩妝與護膚品。", address: "釜山鎮區中央大路", nav: "https://map.naver.com/v5/search/서면역", details: { feature: "釜山最繁華購物地帶", hours: "10:00 - 22:00", off: "無", tickets: "免費", parking: "地下停車場", notes: "Olive Young滿額現場退稅" } },
-                { time: "18:00", title: "晚餐：李在模披薩 or 元祖牛排骨肉", krName: "이재모피자 서면점", type: "food", drive: "步行", stay: "1.5小時", tag: "必吃", desc: "釜山傳奇起司爆漿李在模披薩，起司控絕對不能錯過的名店！", address: "釜山鎮區田浦大路", nav: "https://map.naver.com/v5/search/이재모피자 서면점", details: { feature: "濃郁滿滿起司與香酥餅皮", hours: "10:00 - 21:10", off: "每週日公休", tickets: "約 25,000 KRW/大披薩", parking: "無", notes: "現場抽號碼牌排隊" } }
+                { time: "09:00", title: "醫美診所預約行程", krName: "서면 피부과", type: "spot", drive: "步行", stay: "4小時", tag: "醫美", desc: "09:00 - 13:00 已預約西面醫美皮膚管理與療程。", address: "釜山鎮區西面醫美街", nav: "https://map.naver.com/v5/search/서면 피부과", details: { feature: "皮膚保養管理", hours: "09:00 - 13:00 (預約)", off: "週日", tickets: "依診所療程", parking: "診所停車", notes: "攜帶護照辦理退稅" } },
+                { time: "14:00", title: "西面商圈購物散步", krName: "서면역", type: "spot", drive: "步行", stay: "3小時", tag: "購物", desc: "逛 NC 百貨、地下街服飾與 Olive Young 採買彩妝。", address: "釜山鎮區中央大路", nav: "https://map.naver.com/v5/search/서면역", details: { feature: "繁華購物地帶", hours: "10:00 - 22:00", off: "無", tickets: "免費", parking: "地下停車場", notes: "Olive Young可退稅" } },
+                { time: "18:00", title: "晚餐：李在模披薩 or 元祖牛排骨肉", krName: "이재모피자 서면점", type: "food", drive: "步行", stay: "1.5小時", tag: "必吃", desc: "釜山傳奇起司爆漿李在模披薩！", address: "釜山鎮區田浦大路", nav: "https://map.naver.com/v5/search/이재모피자 서면점", details: { feature: "滿滿起司與香酥餅皮", hours: "10:00 - 21:10", off: "週日公休", tickets: "約 25,000 KRW", parking: "無", notes: "現場抽號碼牌" } }
             ],
             7: [
-                { time: "09:30", title: "飯店退房 (Urban Groove)", krName: "어반그루브 호텔", type: "hotel", drive: "步行", stay: "15分鐘", tag: "退房", desc: "整理好所有購物戰利品與行李，辦理退房手續。", address: "釜山廣域市釜山鎮區", nav: "https://map.naver.com/v5/search/어반그루브 호텔", details: { feature: "退房服務", hours: "Check-out ~ 11:00", off: "無", tickets: "--", parking: "有", notes: "確認房內隨身物品" } },
-                { time: "10:00", title: "抵達金海國際機場", krName: "김해국제공항", type: "transport", drive: "Uber/計程車 30 分鐘", stay: "2小時", tag: "機場", desc: "搭乘 Uber 或計程車前往金海機場，辦理退稅、行李託運與安檢。", address: "釜山江西區空港路108", nav: "https://map.naver.com/v5/search/김해국제공항", details: { feature: "離境登機", hours: "10:00 抵達", off: "無", tickets: "機票憑證", parking: "機場停車", notes: "退稅機台位於2樓" } },
-                { time: "12:00", title: "起飛返回高雄 (KHH)", krName: "가오슝", type: "flight", drive: "飛行時間約 2.5小時", stay: "--", tag: "返家", desc: "搭乘 12:00 航班平安返回高雄，結束充滿驚喜與美食的釜山之旅！", address: "高雄國際機場 KHH", nav: "https://map.naver.com/v5/search/가오슝국제공항", details: { feature: "順利返家", hours: "12:00 起飛", off: "無", tickets: "--", parking: "--", notes: "記得填寫臺灣入境申報" } }
+                { time: "09:30", title: "飯店退房 (Urban Groove)", krName: "어반그루브 호텔", type: "hotel", drive: "步行", stay: "15分鐘", tag: "退房", desc: "整理行李並辦理退房手續。", address: "釜山廣域市釜山鎮區", nav: "https://map.naver.com/v5/search/어반그루브 호텔", details: { feature: "退房服務", hours: "Check-out ~ 11:00", off: "無", tickets: "--", parking: "有", notes: "確認隨身物品" } },
+                { time: "10:00", title: "抵達金海國際機場", krName: "김해국제공항", type: "transport", drive: "Uber 30 分鐘", stay: "2小時", tag: "機場", desc: "搭乘 Uber 前往金海機場，辦理退稅、託運與安檢。", address: "釜山江西區空港路108", nav: "https://map.naver.com/v5/search/김해국제공항", details: { feature: "離境登機", hours: "10:00 抵達", off: "無", tickets: "機票憑證", parking: "機場停車", notes: "退稅機台位於2樓" } },
+                { time: "12:00", title: "起飛返回高雄 (KHH)", krName: "가오슝", type: "flight", drive: "飛行 2.5小時", stay: "--", tag: "返家", desc: "搭乘 12:00 航班平安返回高雄，結束釜山之旅！", address: "高雄國際機場 KHH", nav: "https://map.naver.com/v5/search/가오슝국제공항", details: { feature: "順利返家", hours: "12:00 起飛", off: "無", tickets: "--", parking: "--", notes: "記得填寫入境申報" } }
             ]
         };
 
-        // Complete Backup Database
         const backupDatabase = {
             attractions: [
-                { title: "廣安里海水浴場", kr: "광안리해수욕장", type: "景點", desc: "絕美砂灘與廣安大橋夜景，週六晚上有無人機燈光秀。", addr: "釜山廣域市水營區廣安海邊路219", hours: "24小時", off: "無公休", tickets: "免費", parking: "公有付費停車場", nav: "https://map.naver.com/v5/search/광안리해수욕장" },
-                { title: "海雲台藍線公園 (膠囊列車)", kr: "해운대블루라인파크", type: "景點", desc: "舊鐵道改建的海岸觀光列車與天空膠囊列車，沿途俯瞰蔚藍海景。", addr: "釜山廣域市海雲台區迎月路62번길 13", hours: "09:00 - 20:00", off: "無公休", tickets: "膠囊列車 2人 35,000 KRW", parking: "尾浦/青沙浦停車場", nav: "https://map.naver.com/v5/search/해운대블루라인파크" },
-                { title: "甘川洞文化村", kr: "감천문화마을", type: "景點", desc: "依山而建的繽紛彩色小屋，有小王子與狐狸雕像等熱門拍照景點。", addr: "釜山廣域市沙下區甘內2路144", hours: "09:00 - 18:00", off: "無公休", tickets: "免費", parking: "入口處收費停車場", nav: "https://map.naver.com/v5/search/감천문화마을" },
-                { title: "松島海上纜車", kr: "송도해상케이블카", type: "景點", desc: "跨越松島海水浴場的空中纜車，水晶車廂地板全透明極具震撼感。", addr: "釜山廣域市西區松島海邊路171", hours: "09:00 - 20:00", off: "無公休", tickets: "水晶車廂來回 22,000 KRW", parking: "有專用停車場", nav: "https://map.naver.com/v5/search/송도해상케이블카" },
-                { title: "Spa Land 汗蒸幕", kr: "스파랜드 센텀시티", type: "景點", desc: "位於新世界百貨內的頂級汗蒸幕，擁有天然溫泉水與十多種主題汗蒸房。", addr: "釜山廣域市海雲台區Centum南路35 1樓", hours: "09:00 - 22:00", off: "百貨公休日", tickets: "成人 23,000 KRW (Pass免費)", parking: "百貨地下停車場", nav: "https://map.naver.com/v5/search/스파랜드 센텀시티" },
-                { title: "Arte Museum 釜山", kr: "아르떼뮤지엄 부산", type: "景點", desc: "全球超震撼光影藝術沉浸式展覽館，自然主題與聲音效果極佳。", addr: "釜山廣域市影島區海洋路247번길 29", hours: "10:00 - 20:00", off: "無公休", tickets: "約 19,000 KRW", parking: "有付費停車場", nav: "https://map.naver.com/v5/search/아르떼뮤지엄 부산" }
+                { title: "廣安里海水浴場", kr: "광안리해수욕장", type: "景點", desc: "砂灘與廣安大橋夜景，週六晚上有無人機燈光秀。", addr: "釜山廣域市水營區廣安海邊路219", hours: "24小時", off: "無公休", tickets: "免費", parking: "公有付費停車場", nav: "https://map.naver.com/v5/search/광안리해수욕장" },
+                { title: "海雲台藍線公園 (膠囊列車)", kr: "해운대블루라인파크", type: "景點", desc: "海岸觀光列車與天空膠囊列車，俯瞰蔚藍海景。", addr: "釜山海雲台區迎月路62번길 13", hours: "09:00 - 20:00", off: "無公休", tickets: "膠囊列車 2人 35,000 KRW", parking: "尾浦/青沙浦停車場", nav: "https://map.naver.com/v5/search/해운대블루라인파크" },
+                { title: "甘川洞文化村", kr: "감천문화마을", type: "景點", desc: "繽紛彩色小屋，有小王子與狐狸雕像等拍照景點。", addr: "釜山廣域市沙下區甘內2路144", hours: "09:00 - 18:00", off: "無公休", tickets: "免費", parking: "入口處停車場", nav: "https://map.naver.com/v5/search/감천문화마을" },
+                { title: "松島海上纜車", kr: "송도해상케이블카", type: "景點", desc: "跨越海面的空中纜車，水晶車廂地板全透明。", addr: "釜山西區松島海邊路171", hours: "09:00 - 20:00", off: "無公休", tickets: "水晶來回 22,000 KRW", parking: "有專用停車場", nav: "https://map.naver.com/v5/search/송도해상케이블카" },
+                { title: "Spa Land 汗蒸幕", kr: "스파랜드 센텀시티", type: "景點", desc: "頂級汗蒸幕，擁有天然溫泉水與主題汗蒸房。", addr: "釜山海雲台區Centum南路35 1樓", hours: "09:00 - 22:00", off: "百貨公休日", tickets: "約 23,000 KRW (Pass免費)", parking: "百貨停車場", nav: "https://map.naver.com/v5/search/스파랜드 센텀시티" }
             ],
             restaurants: [
-                { title: "83 haechi (83해치)", kr: "83해치 광안점", type: "烤肉", desc: "廣安里超人氣專人代烤豬肉店，五花肉與豬頸肉外酥內嫩。", addr: "釜山廣域市水營區廣安洞", hours: "16:00 - 24:00", off: "待確認", menu: "厚切五花肉, 豬頸肉, 冷麵", price: "約 13,000 KRW/份", reserve: "現場/線上排隊", parking: "無專用", nav: "https://map.naver.com/v5/search/83해치" },
-                { title: "李在模披薩 (이재모피자)", kr: "이재모피자 서면점", type: "披薩", desc: "釜山在地人最推的爆漿起司披薩，起司品質極佳，人氣居高不下。", addr: "釜山廣域市釜山鎮區田浦大路", hours: "10:00 - 21:10", off: "每週日公休", menu: "李在模特色起司披薩, 蒜味起司條", price: "約 25,000 KRW/大披薩", reserve: "現場抽號碼牌", parking: "無專用", nav: "https://map.naver.com/v5/search/이재모피자 서면점" },
-                { title: "濟州屋頂 (제주옥탑)", kr: "제주옥탑 해운대점", type: "烤肉", desc: "佳誼推薦！石頭爺爺裝飾風格的高級濟州黑豬肉烤肉店。", addr: "釜山廣域市海雲台區佑洞", hours: "16:00 - 01:00", off: "無公休", menu: "濟州黑豬五花肉, 豬皮, 醬肉", price: "約 14,000 KRW/份", reserve: "現場排隊", parking: "周邊停車格", nav: "https://map.naver.com/v5/search/제주옥탑 해운대점" },
-                { title: "hai 水產 (하이수산)", kr: "하이수산", type: "海鮮", desc: "專營帝王蟹與松葉蟹，現場挑選磅秤透明，蒸熟後肉質鮮甜厚實。", addr: "釜山廣域市機張郡機張海邊路", hours: "11:00 - 21:00", off: "待確認", menu: "現蒸帝王蟹, 松葉蟹, 蟹黃炒飯", price: "依當日時價計費", reserve: "可電話預約", parking: "有專用停車場", nav: "https://map.naver.com/v5/search/하이수산" },
-                { title: "ANCIEN 麵包店", kr: "ANCIEN", type: "烘焙咖啡", desc: "廣安里知名手作麵包店，招牌明太子法棍香濃酥脆極具特色。", addr: "釜山廣域市水營區廣安海邊路", hours: "10:30 - 20:00", off: "待確認", menu: "明太子法棍, 可頌, 手沖咖啡", price: "約 4,500 - 7,000 KRW", reserve: "無需預約", parking: "無", nav: "https://map.naver.com/v5/search/ANCIEN 광안" },
-                { title: "All Sunday Bagel (올선데이)", kr: "올선데이", type: "貝果早餐", desc: "廣安里海邊當紅貝果專賣店，口味豐富且搭配多種特調抹醬。", addr: "釜山廣域市水營區廣安海邊路", hours: "08:00 - 19:00", off: "待確認", menu: "鹽可頌貝果, 藍莓抹醬, 拿鐵", price: "約 3,800 KRW/個", reserve: "現場購買", parking: "無", nav: "https://map.naver.com/v5/search/올선데이 광안" },
-                { title: "密親烤腸 (미친막창)", kr: "미친막창 서면점", type: "烤腸", desc: "西面超邪惡排隊名店，醬燒牛腸與豬烤腸香濃 Q 彈十足。", addr: "釜山廣域市釜山鎮區西面", hours: "16:00 - 02:00", off: "待確認", menu: "醬燒烤腸組合, 起司大腸, 炒飯", price: "約 15,000 KRW/人", reserve: "現場排隊", parking: "無", nav: "https://map.naver.com/v5/search/미친막창 서면" }
+                { title: "83 haechi (83해치)", kr: "83해치 광안점", type: "烤肉", desc: "廣安里專人代烤豬肉店，五花肉與豬頸肉外酥內嫩。", addr: "釜山廣域市水營區廣安洞", hours: "16:00 - 24:00", off: "待確認", menu: "厚切五花肉, 豬頸肉", price: "約 13,000 KRW/份", reserve: "現場/線上排隊", parking: "無", nav: "https://map.naver.com/v5/search/83해치" },
+                { title: "李在模披薩 (이재모피자)", kr: "이재모피자 서면점", type: "披薩", desc: "釜山傳奇爆漿起司披薩，起司香濃餅皮酥脆。", addr: "釜山廣域市釜山鎮區田浦大路", hours: "10:00 - 21:10", off: "週日公休", menu: "起司披薩, 蒜味起司條", price: "約 25,000 KRW", reserve: "現場抽號碼牌", parking: "無", nav: "https://map.naver.com/v5/search/이재모피자 서면점" },
+                { title: "濟州屋頂 (제주옥탑)", kr: "제주옥탑 해운대점", type: "烤肉", desc: "佳誼推薦！石頭爺爺裝飾風格的濟州黑豬肉烤肉。", addr: "釜山海雲台區佑洞", hours: "16:00 - 01:00", off: "無", menu: "黑豬五花肉, 豬皮", price: "約 14,000 KRW/份", reserve: "現場排隊", parking: "無", nav: "https://map.naver.com/v5/search/제주옥탑 해운대점" },
+                { title: "hai 水產 (하이수산)", kr: "하이수산", type: "海鮮", desc: "專營帝王蟹與松葉蟹，現場挑選磅秤透明。", addr: "釜山機張郡機張海邊路", hours: "11:00 - 21:00", off: "待確認", menu: "現蒸帝王蟹, 蟹黃炒飯", price: "依時價計費", reserve: "可預約", parking: "有停車場", nav: "https://map.naver.com/v5/search/하이수산" }
             ]
         };
 
-        /* ==================== INITIALIZATION & THEME ==================== */
         window.onload = function() {
-            // Setup Theme Initial
             if (currentTheme === 'dark') {
                 document.documentElement.classList.add('dark');
                 document.getElementById('themeIcon').className = 'fas fa-sun text-yellow-300';
@@ -637,14 +579,10 @@
                 document.getElementById('themeIcon').className = 'fas fa-moon text-doodleDark';
             }
 
-            // Render default Day 1
             showDay(1);
-            // Render default Backup list
             renderBackupList();
-            // Render Expenses
-            renderExpenses();
-            // Render Todo Checklist
             renderTodoList();
+            fetchLiveExchangeRate();
         };
 
         function toggleTheme() {
@@ -660,7 +598,6 @@
             localStorage.setItem('busan_theme', currentTheme);
         }
 
-        /* ==================== TAB SWITCHING ==================== */
         function switchTab(tabId) {
             const tabs = ['home', 'flight', 'itinerary', 'backup', 'expense', 'hotel', 'todo'];
             tabs.forEach(id => {
@@ -679,10 +616,33 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* ==================== ITINERARY RENDER ==================== */
+        /* 抓取即時國際匯率 */
+        async function fetchLiveExchangeRate() {
+            const statusEl = document.getElementById('rateStatusText');
+            if (statusEl) statusEl.innerText = "更新中...";
+
+            try {
+                const res = await fetch('https://open.er-api.com/v6/latest/KRW');
+                const data = await res.json();
+                if (data && data.rates && data.rates.TWD) {
+                    krwToTwdRate = data.rates.TWD;
+                    localStorage.setItem('cached_krw_rate', krwToTwdRate);
+                    if (statusEl) {
+                        statusEl.innerText = `1 KRW ≈ ${krwToTwdRate.toFixed(4)} TWD`;
+                    }
+                    renderExpenses();
+                }
+            } catch (err) {
+                console.warn("無法取得即時匯率，使用備用快取匯率:", err);
+                if (statusEl) {
+                    statusEl.innerText = `1 KRW ≈ ${krwToTwdRate.toFixed(4)} TWD (離線)`;
+                }
+                renderExpenses();
+            }
+        }
+
         function showDay(dayNum) {
             currentDay = dayNum;
-            // Highlight Day Button
             for (let i = 1; i <= 7; i++) {
                 const btn = document.getElementById(`day-btn-${i}`);
                 if (i === dayNum) {
@@ -698,8 +658,7 @@
             const items = itineraryData[dayNum] || [];
 
             let html = '';
-            items.forEach((item, index) => {
-                // Color badges according to item type
+            items.forEach((item) => {
                 let typeBadge = 'bg-gray-100 text-gray-800';
                 if (item.type === 'food') typeBadge = 'bg-orange-100 text-orange-800 border-orange-300';
                 if (item.type === 'spot') typeBadge = 'bg-sky-100 text-sky-800 border-sky-300';
@@ -709,7 +668,6 @@
                 html += `
                 <div class="card-doodle bg-white dark:bg-cardDark p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 relative transition hover:shadow-doodleHover">
                     <div class="flex items-start space-x-3 w-full sm:w-auto">
-                        <!-- Big bold time display -->
                         <div class="text-center min-w-[70px] pr-2 border-r-2 border-dashed border-gray-300 dark:border-gray-600">
                             <span class="text-xl sm:text-2xl font-black font-hand text-rose-500 leading-none block">${item.time}</span>
                             <span class="text-[10px] text-gray-400 block mt-1"><i class="far fa-clock mr-0.5"></i>${item.stay}</span>
@@ -722,12 +680,11 @@
                             <h3 class="font-black text-base sm:text-lg text-doodleDark dark:text-gray-100">${item.title}</h3>
                             <p class="text-xs text-gray-600 dark:text-gray-300 line-clamp-2">${item.desc}</p>
                             <div class="text-[11px] text-gray-500 flex items-center space-x-3 pt-1">
-                                <span>🚗 交通/車程: <strong>${item.drive}</strong></span>
+                                <span>🚗 交通: <strong>${item.drive}</strong></span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Action buttons -->
                     <div class="flex items-center space-x-2 w-full sm:w-auto justify-end border-t sm:border-t-0 pt-2 sm:pt-0 border-gray-200 dark:border-gray-700">
                         <button onclick='openModal(${JSON.stringify(item)})' class="px-3 py-1.5 bg-warmYellow/60 text-doodleDark text-xs font-bold rounded-xl border border-doodleDark hover:bg-warmYellow transition">
                             <i class="fas fa-info-circle mr-1"></i>詳細介紹
@@ -743,7 +700,6 @@
             container.innerHTML = html;
         }
 
-        /* ==================== BACKUP DATABASE RENDER ==================== */
         function switchBackupCategory(cat) {
             backupCategory = cat;
             const btnAtt = document.getElementById('cat-btn-attractions');
@@ -800,22 +756,12 @@
                 `;
             });
 
-            container.innerHTML = html.length > 0 ? html : `<p class="col-span-2 text-center text-xs text-gray-400 py-8">未找到符合條件的備用項目</p>`;
+            container.innerHTML = html.length > 0 ? html : `<p class="col-span-2 text-center text-xs text-gray-400 py-8">未找到符合條件的項目</p>`;
         }
 
         function filterBackupItems() {
             const val = document.getElementById('backupSearchInput').value;
             renderBackupList(val);
-        }
-
-        /* ==================== EXPENSE TRACKER ==================== */
-        function updateExchangeRate() {
-            const rateInput = parseFloat(document.getElementById('exchangeRate').value);
-            if (rateInput && rateInput > 0) {
-                exchangeRate = rateInput;
-                localStorage.setItem('busan_rate', exchangeRate);
-                renderExpenses();
-            }
         }
 
         function renderExpenses() {
@@ -825,7 +771,7 @@
 
             expenses.forEach((item, index) => {
                 totalKRW += item.krw;
-                const twd = Math.round(item.krw / exchangeRate);
+                const twd = Math.round(item.krw * krwToTwdRate);
 
                 html += `
                 <tr class="border-b border-gray-100 dark:border-gray-800">
@@ -842,7 +788,7 @@
 
             tbody.innerHTML = html.length > 0 ? html : `<tr><td colspan="5" class="text-center py-4 text-xs text-gray-400">尚無記帳紀錄，請從上方新增。</td></tr>`;
 
-            const totalTWD = Math.round(totalKRW / exchangeRate);
+            const totalTWD = Math.round(totalKRW * krwToTwdRate);
             document.getElementById('totalKRW').innerText = `₩ ${totalKRW.toLocaleString()}`;
             document.getElementById('totalTWD').innerText = `NT$ ${totalTWD.toLocaleString()}`;
         }
@@ -868,7 +814,6 @@
             renderExpenses();
         }
 
-        /* ==================== TODO CHECKLIST ==================== */
         function renderTodoList() {
             const container = document.getElementById('todoCategoriesContainer');
             let html = '';
@@ -910,7 +855,6 @@
             }
         }
 
-        /* ==================== DETAIL MODAL ==================== */
         function openModal(data) {
             document.getElementById('modalTitle').innerText = data.title;
             document.getElementById('modalSubTitle').innerText = data.krName || '';
@@ -932,8 +876,21 @@
         }
 
         function closeModal() {
+            document.getElementById('detailModal').classList.hidden = true;
             document.getElementById('detailModal').classList.add('hidden');
         }
     </script>
 </body>
 </html>
+```eod
+
+---
+
+### 🚀 如何快速發布到 GitHub Pages？
+
+1. **複製檔案：** 點擊上方檔名旁的「下載」或複製全文內容，在電腦儲存為 `index.html`。
+2. **上傳 GitHub：**
+   - 進入您的 GitHub Repository，點選 **Upload files** 將 `index.html` 拖曳上傳並 Commit。
+3. **開啟 Pages 網址：**
+   - 進到 **Settings** ➔ **Pages**，選擇 `main` 分頁後按 Save。
+   - 等待約 1 分鐘即可取得網址傳給朋友，在 iPhone 上點開就能精美呈現！
